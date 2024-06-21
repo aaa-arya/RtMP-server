@@ -1,21 +1,32 @@
 const  NodeMediaServer  = require('node-media-server');
 
-const config = {
-    rtmp: {
-        port: 1935,
-        chunk_size: 60000,
-        gop_cache: true,
-        ping: 60,
-        ping_timeout: 30
-    },
-    http: {
-        port: 8000,
-        allow_origin: '*'
-    }
-};
 
+
+const config = {
+  rtmp: {
+      port: 1935,
+      chunk_size: 60000,
+      gop_cache: true,
+      ping: 60,
+      ping_timeout: 30
+  },
+  http: {
+      port: 8000,
+      allow_origin: '*'
+  }
+};
 var nms = new NodeMediaServer(config);
-nms.run();
+  nms.run();
+
+  
+
+nms.on('getFilePath', (streamPath, oupath, mp4Filename) => {
+  console.log('---------------- get file path ---------------');
+  console.log(streamPath);
+  console.log(oupath);
+  console.log(mp4Filename);
+});
+
 nms.on('ready',()=>{
   console.log("ready");
 })
@@ -71,3 +82,9 @@ nms.on("preConnect", (id, args) => {
     console.log(
       "[NodeEvent on donePlay]",    );
   });
+
+
+
+
+
+
