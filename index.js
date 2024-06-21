@@ -89,3 +89,14 @@ nms.on("preConnect", (id, args) => {
 
 
 
+  // "name": "rtmp-server",
+  // "version": "1.0.0",
+  // "description": "",
+  // "main": "index.js",
+  // "scripts": {
+  //   "start": "node index.js",
+  //   "test": "echo \"Error: no test specified\" && exit 1"
+  // },
+  // "keywords": [],
+  // "author": "",
+  // "license": "ISC",
