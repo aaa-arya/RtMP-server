@@ -7,15 +7,13 @@ const config = {
       gop_cache: true,
       ping: 60,
       ping_timeout: 30
-  }
-  
-  // ,
-  // http: {
-  //     port: 8000,
-  //     allow_origin: '*'
+  },
+  http: {
+      port: 8000,
+      allow_origin: '*'
     
 
-  // }
+  }
 
 };
 var nms = new NodeMediaServer(config);
