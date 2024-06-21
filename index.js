@@ -21,7 +21,7 @@ const config = {
 var nms = new NodeMediaServer(config);
   nms.run();
 
-//  nms.stop();
+ nms.stop();
 console.log("okkdone half");
 nms.on('getFilePath', (streamPath, oupath, mp4Filename) => {
   console.log('---------------- get file path ---------------');
