@@ -19,7 +19,7 @@ const config = {
 var nms = new NodeMediaServer(config);
   console.log("open port"+port);
  // nms.stop();
-nms.run();
+// nms.run();
 nms.on('getFilePath', (streamPath, oupath, mp4Filename) => {
   console.log('---------------- get file path ---------------');
   console.log(streamPath);
