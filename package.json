@@ -1,13 +1,9 @@
-
-
-
 {
   "dependencies": {
     "express": "^4.19.2",
     "ffmpeg": "^0.0.4",
     "node-media-server": "^2.7.0",
-    "vercel": "^34.2.7"
-  
+    "vercel": "^34.2.7",
+    "yarn": "^1.22.22"
   }
-
 }

@@ -7,20 +7,19 @@ const config = {
       gop_cache: true,
       ping: 60,
       ping_timeout: 30
-  },
-  http: {
-      port: 8000,
+  }
+  ,
+  https: {
+      port: 8080,
       allow_origin: '*'
     
-
   }
 
 };
 var nms = new NodeMediaServer(config);
-  nms.run();
 
 //  nms.stop();
-console.log("okkdone half");
+nms.run();
 nms.on('getFilePath', (streamPath, oupath, mp4Filename) => {
   console.log('---------------- get file path ---------------');
   console.log(streamPath);
@@ -32,9 +31,10 @@ nms.on('ready',()=>{
   console.log("ready");
 })
 
+
 nms.on("preConnect", (id, args) => {
     console.log(
-      "[NodeEvent on preConnect]2"    );
+      "[NodeEvent on preConnect]2"+  +args  );
     // let session = nms.getSession(id);
     // session.reject();
   });
@@ -46,7 +46,7 @@ nms.on("preConnect", (id, args) => {
   
   nms.on("doneConnect", (id, args) => {
     console.log(
-      "[NodeEvent on doneConnect]2" +id   );
+      "[NodeEvent on doneConnect]2" +id   +args);
   });
   
   nms.on("prePublish", (id, StreamPath, args) => {
@@ -59,17 +59,17 @@ nms.on("preConnect", (id, args) => {
   
   nms.on("postPublish", (id, StreamPath, args) => {
     console.log(
-      "[NodeEvent on postPublish]2"    );
+      "[NodeEvent on postPublish]2"   +StreamPath );
   });
   
   nms.on("donePublish", (id, StreamPath, args) => {
     console.log(
-      "[NodeEvent on donePublish]2"    );
+      "[NodeEvent on donePublish]2"   +StreamPath );
   });
   
   nms.on("prePlay", (id, StreamPath, args) => {
     console.log(
-      "[NodeEvent on prePlay]2   " );
+      "[NodeEvent on prePlay]2   " +StreamPath);
     // let session = nms.getSession(id);
     // session.reject();
   });
